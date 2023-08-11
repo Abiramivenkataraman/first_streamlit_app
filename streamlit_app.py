@@ -81,18 +81,22 @@ def insert_row_snowflake(new_fruit):
 if streamlit.button('Get Fruit List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
+  my_data_rows =  insert_row_snowflake('papaya')
+  my_data_rows =  insert_row_snowflake('kiwi')
+  my_data_rows =  insert_row_snowflake('jackfruit')
+  my_data_rows =  insert_row_snowflake('guava')
   my_cnx.close()
   streamlit.dataframe(my_data_rows)
 
 
-papaya = insert_row_snowflake('papaya')
-streamlit.dataframe(papaya)
+# papaya = insert_row_snowflake('papaya')
+# streamlit.dataframe(papaya)
 
-kiwi = insert_row_snowflake('kiwi')
-streamlit.dataframe(kiwi)
+# kiwi = insert_row_snowflake('kiwi')
+# streamlit.dataframe(kiwi)
 
-jackfruit = insert_row_snowflake('jackfruit')
-streamlit.dataframe(jackfruit)
+# jackfruit = insert_row_snowflake('jackfruit')
+# streamlit.dataframe(jackfruit)
 
-guava = insert_row_snowflake('guava')
-streamlit.dataframe(guava)
+# guava = insert_row_snowflake('guava')
+# streamlit.dataframe(guava)
