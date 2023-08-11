@@ -84,6 +84,7 @@ if streamlit.button('Get Fruit List'):
   my_cnx.close()
   streamlit.dataframe(my_data_rows)
 
+streamlit.stop()
 insert_row_snowflake('papaya')
 insert_row_snowflake('kiwi')
 insert_row_snowflake('jackfruit')
