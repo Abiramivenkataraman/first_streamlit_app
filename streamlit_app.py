@@ -26,9 +26,8 @@ streamlit.header('Fruityvice Fruit Advice!')
 fruit_choice = streamlit.text_input('What fruit would you like information about?','kiwi')
 streamlit.write('The user entered', fruit_choice)
 
-print("I am in 29")
+
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" +fruit_choice)
-print("I am in 31")
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
 
@@ -44,6 +43,8 @@ streamlit.dataframe(my_data_rows)
 import pandas
 add_my_fruit = streamlit.text_input('What fruit would you like to add?','Jackfruit')
 streamlit.write('Thanks for adding', add_my_fruit)
+
+my_cur.execute("insert into fruit_load_list values('from streamlit')")
 
 
 
